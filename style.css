@@ -1,0 +1,56 @@
+/* Fonte personalizada */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: url('pegadas-cinza.png') repeat; /* Substitua por uma imagem de pegadas */
+    background-color: #f0f0f0;
+    color: #2E7D32;
+    text-align: center;
+    padding: 20px;
+}
+
+.container {
+    background: white;
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-weight: 600;
+    color: #4CAF50;
+}
+
+p {
+    font-size: 16px;
+}
+
+.question {
+    margin: 15px 0;
+    text-align: left;
+}
+
+label {
+    display: block;
+    font-size: 16px;
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background: #388E3C;
+}
