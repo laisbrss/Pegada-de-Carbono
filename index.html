@@ -3,30 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seu Resultado</title>
+    <title>Calculadora de Pegada de Carbono</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Seu Resultado</h1>
-        <p id="resultado"></p>
-        <p id="comparacao"></p>
-        <a href="index.html"><button>Refazer Teste</button></a>
+        <h1>Calculadora de Pegada de Carbono</h1>
+        <p>Responda as perguntas abaixo e descubra o impacto do seu estilo de vida no meio ambiente.</p>
+
+        <form id="quizForm">
+            <!-- Pergunta 1 -->
+            <div class="question">
+                <p><strong>1. Como você se desloca diariamente?</strong></p>
+                <label><input type="radio" name="transporte" value="0"> A pé/bicicleta</label>
+                <label><input type="radio" name="transporte" value="3650"> Carro próprio</label>
+                <label><input type="radio" name="transporte" value="1825"> Moto</label>
+                <label><input type="radio" name="transporte" value="365"> Transporte público</label>
+            </div>
+
+            <!-- Pergunta 2 -->
+            <div class="question">
+                <p><strong>2. Com que frequência você viaja de avião?</strong></p>
+                <label><input type="radio" name="aviao" value="0"> Nunca</label>
+                <label><input type="radio" name="aviao" value="400"> 1 a 2 vezes por ano</label>
+                <label><input type="radio" name="aviao" value="600"> 3 a 5 vezes por ano</label>
+                <label><input type="radio" name="aviao" value="1000"> Mais de 5 vezes por ano</label>
+            </div>
+
+            <!-- Botão para calcular -->
+            <button type="button" onclick="calcularPegada()">Calcular Pegada de Carbono</button>
+        </form>
     </div>
 
-    <script>
-        window.onload = function() {
-            let pegadaTotal = localStorage.getItem("pegadaTotal");
-            let mediaBrasil = 4300; // Média estimada
-
-            document.getElementById("resultado").innerHTML = `Sua pegada de carbono é <strong>${pegadaTotal} kg CO₂ por ano</strong>.`;
-            
-            if (pegadaTotal > mediaBrasil) {
-                document.getElementById("comparacao").innerHTML = `Isso é <strong>${((pegadaTotal / mediaBrasil) * 100 - 100).toFixed(1)}% maior</strong> que a média brasileira.`;
-            } else {
-                document.getElementById("comparacao").innerHTML = `Isso é <strong>${(100 - (pegadaTotal / mediaBrasil) * 100).toFixed(1)}% menor</strong> que a média brasileira.`;
-            }
-        };
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
