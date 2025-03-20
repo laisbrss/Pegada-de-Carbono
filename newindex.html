@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seu Resultado</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Seu Resultado</h1>
+        <p id="resultado"></p>
+        <p id="comparacao"></p>
+        <a href="index.html"><button>Refazer Teste</button></a>
+    </div>
+
+    <script>
+        window.onload = function() {
+            let pegadaTotal = localStorage.getItem("pegadaTotal");
+            let mediaBrasil = 4300; // Média estimada
+
+            document.getElementById("resultado").innerHTML = `Sua pegada de carbono é <strong>${pegadaTotal} kg CO₂ por ano</strong>.`;
+            
+            if (pegadaTotal > mediaBrasil) {
+                document.getElementById("comparacao").innerHTML = `Isso é <strong>${((pegadaTotal / mediaBrasil) * 100 - 100).toFixed(1)}% maior</strong> que a média brasileira.`;
+            } else {
+                document.getElementById("comparacao").innerHTML = `Isso é <strong>${(100 - (pegadaTotal / mediaBrasil) * 100).toFixed(1)}% menor</strong> que a média brasileira.`;
+            }
+        };
+    </script>
+</body>
+</html>
